@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { getArticles } from "./api";
+import Articles from "./Articles";
+import Searchbar from "./Searchbar";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [articles, setArticles] = useState([]);
+  const [topic, setTopic] = useState("");
+  const [totalResults, setTotalResults] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const searchForTopic = async (topic) => {
+    try {
+      setIsLoading(true);
+      const response = await getArticles(topic);
+      setArticles(response.articles);
+      setTopic(topic);
+      setTotalResults(response.totalResults);
+    } catch (error) {
+      setError("Could not find any articles");
+    }
+    setIsLoading(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* Searchbar */}
+      <Searchbar searchForTopic={searchForTopic} />
+
+      {/* Loading message */}
+      {isLoading && <p style={{ textAlign: "center" }}>Hold on a sec..Searching for articles...</p>}
+
+      {/* Found articles message */}
+      {articles.length > 0 && <h2>Found {totalResults} articles on "{topic}"</h2>}
+
+      {/* Render articles */}
+      {articles.length > 0 && <Articles articles={articles} />}
+
+      {/* Error message */}
+      {error && <p>Couldn't find any articles on {topic}</p>}
+
+    </>
   );
-}
+};
 
 export default App;
