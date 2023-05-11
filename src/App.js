@@ -11,6 +11,8 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+
+  
   const searchForTopic = async (topic) => {
     try {
       setIsLoading(true);
