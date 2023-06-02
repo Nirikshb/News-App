@@ -1,65 +1,71 @@
 body {
-  background: #2596ff;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.searchbar {
-  text-align: justify;
-  background: #fff;
-  font: inherit;
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  width: 80%;
-  color: black;
-  padding: 0.5em 1.5em;
-}
-
-button {
-  background: #17f;
-  color: #fff;
-  font: inherit;
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  padding: 0.5em 1.5em;
-}
-
-button:active {
-  background-color: #05b;
-}
-
-.footerpart {
-  text-align: right;
-  margin-top: 35rem;
-}
-
-.picture {
-  margin-right: 0.5em;
-  float: left;
-  box-shadow: 0px 1px 1px 1px #0002;
-  width: 18.75rem; /* 300px */
-}
-
-.provider {
-  display: grid;
-}
-
-/* Responsive Design */
-
-@media only screen and (max-width: 768px) {
-  .footerpart {
-    margin-top: 25rem;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
+  h1, span{
+  color: black;
+  display: flex;
+  justify-content: center;
+  }
+  
+
+  .searchbar {
+    text-align: justify;
+    font: inherit;
+    /* border: none; */
+    border-radius: 1px;
+    width: 90%;
+    height: 1.3vh;
+    color: black;
+    padding: 0.5em 1.5em;
+  }
+  
+  button {
+    background: #17f;
+    color: #fff;
+    font: inherit;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    padding: 0.5em 1.5em;
+  }
+  
+  button:active {
+    background-color: #05b;
+  }
+  
+  .footerpart {
+    text-align: right;
+    margin-top: 35rem;
+  }
+  
+  a:link { text-decoration: none; }
 
   .picture {
-    width: 100%;
+    margin-right: 0.5em;
+    float: left;
+    box-shadow: 0px 1px 1px 1px #0002;
+    width: 18.75rem; /* 300px */
   }
-}
-
-@media only screen and (max-width: 480px) {
-  .searchbar {
-    width: 100%;
+  
+  .provider {
+    display: grid;
   }
-}
+  
+  /* Responsive Design */
+  
+  @media only screen and (max-width: 768px) {
+    .footerpart {
+      margin-top: 25rem;
+    }
+  
+    .picture {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .searchbar {
+      width: 100%;
+    }
+  }

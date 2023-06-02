@@ -28,6 +28,10 @@ const App = () => {
 
   return (
     <>
+    <div>
+      <h1>ATN NEWS</h1>
+      <span>We hear you</span>
+    </div>
       {/* Searchbar */}
       <Searchbar searchForTopic={searchForTopic} />
 
