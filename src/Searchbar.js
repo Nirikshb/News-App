@@ -23,6 +23,7 @@ const SearchBar = ({ searchForTopic }) => {
     <div>
       {/* Search input */}
       <input
+        placeholder="Searchbar"
         className="searchbar"
         autoFocus
         value={topic}
