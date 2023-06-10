@@ -39,16 +39,16 @@ const App = () => {
       {isLoading && <p style={{ textAlign: "center" }}>Hold on a sec..Searching for articles...</p>}
 
       {/* Found articles message */}
-      {articles.length > 0 && <h2>Found {totalResults} articles on "{topic}"</h2>}
-
-      {/* Render articles */}
-      {articles.length > 0 && <Articles articles={articles} />}
-
-      {/* Error message */}
-      {error && <p>Couldn't find any articles on {topic}</p>}
-
+      {articles.length > 0 && (
+        <>
+          <h2>Found {totalResults} articles on "{topic}"</h2>
+          <Articles articles={articles} />
+        </>
+      )}
+      {error && <p>{error}</p>}
     </>
   );
 };
+
 
 export default App;
